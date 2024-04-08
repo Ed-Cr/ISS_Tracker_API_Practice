@@ -3,10 +3,10 @@ from datetime import datetime
 import smtplib
 import time
 
-MY_EMAIL = "edward.cronin20@gmail.com"
-MY_PASSWORD = "wtiwxknjztuwmdnx"
-MY_LAT = 37.686770
-MY_LONG = -77.535340
+MY_EMAIL = "YOUR_EMAIL_HERE"
+MY_PASSWORD = "stmp_password"
+MY_LAT = LAT
+MY_LONG = LONG
 
 
 def is_iss_overhead():
@@ -43,7 +43,7 @@ def is_night():
 while True:
     time.sleep(60)
     if is_iss_overhead() and is_night():
-        connection = smtplib.SMTP("edward.cronin20@gmail.com")
+        connection = smtplib.SMTP("EMAIL")
         connection.starttls()
         connection.login(MY_EMAIL, MY_PASSWORD)
         connection.sendmail(
